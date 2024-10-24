@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MT Junk.S',
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromARGB(255, 86, 200, 53),
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 86, 200, 53)),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 168, 246, 147),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 168, 246, 147)),
         useMaterial3: true,
       ),
-      home: const MyHomePage()
+      home: const MyHomePage(),
     );
     
   }
@@ -36,31 +36,40 @@ class MyHomePage extends StatelessWidget {
           )
           ),
         drawer: const NavigationDrawer(),
-        body: const Wrap(
-            children: <Widget>[
-              ListTile(
-                title: Text('Account Name: Terri Smolders'),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.blue,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+              label: "Drop off Centres"
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.car_rental_rounded),
+              label:"Pickups"
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.info),
+              label: "Learn More"
+            )
+
+          ],
+        ),
+        body: SizedBox(
+          height: 74,
+          child: Container(
+            child: const Card(
+              shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.yellowAccent)),
+              child: Column(
+                children: [
+                 ListTile(
+                 title: Text('Account Name: Terri Smolders\n''Address: 123 Tech Street'), 
+                 ),
+                ]
               ),
-              ListTile(
-                title: Text('Address: 123 Tech Street '),
+              )
               ),
-              ListTile(
-                title: Text('Account Type: Free Member\n'"You've been using MT Junk.S for 16 months now"),
-              ),
-              ListTile(
-                title: Text("You have recycled \$52.61 worth of E-Waste!"),
-              ),
-              ListTile(
-                title: Text("You have recycled \$83.56 worth of Clothing!"),
-              ),
-              ListTile(
-                title: Text("You have kept 78lbs of E-Waste out of Landfills!"),
-              ),
-              ListTile(
-                title: Text("You have kept 34lbs of clothing out of Landfills!"),
-              ),
-            ],
-          ),
+        )
         );
   }
 
@@ -103,8 +112,8 @@ class NavigationDrawer extends StatelessWidget {
     child: Wrap(
      children: [
       ListTile(
-        leading: const Icon(Icons.settings),
-        title: const Text('Settings'),
+        leading: const Icon(Icons.home),
+        title: const Text('Home'),
         onTap: () {},
       ),
       ListTile(
@@ -116,6 +125,11 @@ class NavigationDrawer extends StatelessWidget {
         leading: const Icon(Icons.logout),
         title: const Text('Sign out'),
         onTap: (){},
+      ),
+      ListTile(
+        leading: const Icon(Icons.settings),
+        title: const Text("Settings"),
+        onTap: () {},
       ),
     ],
   )
