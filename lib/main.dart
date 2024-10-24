@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     
   }
 }
-
+//Home Page
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
@@ -36,6 +36,7 @@ class MyHomePage extends StatelessWidget {
           )
           ),
         drawer: const NavigationDrawer(),
+        // Bottom Nav Bar
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.blue,
           items: const <BottomNavigationBarItem>[
@@ -75,15 +76,7 @@ class MyHomePage extends StatelessWidget {
 
 }
 
-
-
-
-
-
-
-
-
-
+// Hamburger Drawer
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({super.key});
  
