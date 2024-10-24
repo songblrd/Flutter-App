@@ -55,7 +55,7 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
         body: SizedBox(
-          height: 74,
+          height: 96,
           child: Container(
             child: const Card(
               shape: RoundedRectangleBorder(
@@ -63,7 +63,7 @@ class MyHomePage extends StatelessWidget {
               child: Column(
                 children: [
                  ListTile(
-                 title: Text('Account Name: Terri Smolders\n''Address: 123 Tech Street'), 
+                 title: Text('Account Name: Terri Smolders\n''Address: 123 Tech Street\n''Your pickup day for your region is Wednesday.'), 
                  ),
                 ]
               ),
@@ -131,6 +131,11 @@ class NavigationDrawer extends StatelessWidget {
         title: const Text("Settings"),
         onTap: () {},
       ),
+      ListTile(
+        leading: const Icon(Icons.add_shopping_cart),
+        title: const Text("Community Marketplace"),
+        onTap: () {},
+      )
     ],
   )
   );
